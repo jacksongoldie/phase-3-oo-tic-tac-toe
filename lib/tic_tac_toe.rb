@@ -22,9 +22,13 @@ class TicTacToe
     def play
         until over?
             turn
+            if draw?
+                return
+            end
             #binding.pry
         end
-        puts won? ? "Congratulations #{winner}!" : "Cat's Game!"
+
+       puts won? ? "Congratulations #{winner}!" : "Cat's Game!"
     end
         
 
@@ -113,6 +117,3 @@ class TicTacToe
 end
 
 #binding.pry
-
-game = TicTacToe.new
-game.play
